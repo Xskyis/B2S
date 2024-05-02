@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -27,9 +28,10 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($data)){
-            return redirect()->route('dashboard');
+            return redirect()-> route('dashboard');
         }else{
-            return redirect()-> route('login')->with('failed','Username atau Password Salah');
+            Session::flash('failed', 'Username atau Password Salah');
+            return view('login');
         }
     }
 
