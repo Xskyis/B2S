@@ -22,9 +22,27 @@
                                     <form action="{{ route('hapus_bab', ['id' => $rincianMapel->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin menghapus bab {{ $rincianMapel->nama }}?')">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                             <i class='bx bxs-trash-alt'></i>
                                         </button>
+
+                                        <div class="modal" tabindex="-1" id="deleteModal">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title">Yakin ingin menghapus bab <strong>{{ $rincianMapel->nama }}</strong> ?</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                {{-- <div class="modal-body">
+                                                  <p></p>
+                                                </div> --}}
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                  <button type="submit" class="btn btn-danger">Hapus</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                     </form>
                                 @endif
                             </li>
