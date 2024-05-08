@@ -10,20 +10,20 @@
                   <h2>Tambah Materi</h2>
                   <form action="{{ route('tambahMateri.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
-                    <div class="form-group">
-                      <label for="nama">Nama Bab:</label>
+                    <div class="form-group mb-2">
+                      <label class="mb-1" for="nama">Nama Bab:</label>
                       <input type="text" class="form-control" id="nama" name="nama" required>
                     </div>
-                    <div class="form-group">
-                      <label for="id_mapel">Mapel:</label>
+                    <div class="form-group mb-2">
+                      <label class="mb-1" for="id_mapel">Mapel:</label>
                       <select class="form-control" id="id_mapel" name="id_mapel" required>
                         @foreach($mapels as $mapel)
                           <option value="{{ $mapel->id }}">{{ $mapel->nama }}</option>
                         @endforeach
                       </select>
                     </div>
-                    <div class="form-group">
-                      <label for="video">File Video:</label>
+                    <div class="form-group mb-2">
+                      <label class="mb-1" for="video">File Video:</label>
                         <input type="file" class="form-control" id="video" name="video" required accept="video/mp4,video/*">
                     </div>
                     <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
