@@ -6,6 +6,7 @@ use App\Http\Controllers\RincianBabController;
 use App\Http\Controllers\RincianController;
 use App\Http\Controllers\TambahMateriController;
 use App\Http\Controllers\RequestMateriController;
+use App\Http\Controllers\TambahMapelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,8 +34,10 @@ Route::post('requestMateri', [RequestMateriController::class, 'store'])->name('r
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('tambahMapel', [TambahMapelController::class, 'index'])->name('tambahMapel');
     Route::get('tambahMateri', [TambahMateriController::class, 'index'])->name('tambahMateri');
     Route::delete('/bab/{id}', [RincianBabController::class, 'destroy'])->name('hapus_bab');
+    Route::post('prosesTambahMapel', [TambahMapelController::class, 'store'])->name('tambahMapel.store');
     Route::post('prosesTambahMateri', [TambahMateriController::class, 'store'])->name('tambahMateri.store');
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });

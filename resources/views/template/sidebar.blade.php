@@ -25,6 +25,17 @@
         @auth <!-- Cek apakah pengguna terautentikasi -->
             @if (Auth::user()->role == 'admin')
                 <li class="menu-item">
+                    <a href="{{ route('tambahMapel') }}" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-book-add'></i>
+                        <div data-i18n="Analytics">Tambah Mapel</div>
+                    </a>
+                </li>
+            @endif
+        @endauth
+
+        @auth <!-- Cek apakah pengguna terautentikasi -->
+            @if (Auth::user()->role == 'admin')
+                <li class="menu-item">
                     <a href="{{ route('tambahMateri') }}" class="menu-link">
                         <i class='menu-icon tf-icons bx bxs-book'></i>
                         <div data-i18n="Analytics">Tambah Materi</div>
