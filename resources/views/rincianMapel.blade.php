@@ -6,7 +6,13 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <div class="row">
-                    <h4 class="mb-4">{{ $mapel->nama }}</h4>
+                    <div class="d-flex">
+                      <a href="/" class="">
+                        <i class="bx bx-arrow-back me-2"></i>
+                      </a>
+
+                      <h4 class="mb-4">{{ $mapel->nama }}</h4>
+                    </div>
                     @if($bab->isEmpty())
                         <p>Belum ada rincian untuk mapel ini.</p>
                     @else
