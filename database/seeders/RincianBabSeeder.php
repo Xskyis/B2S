@@ -18,8 +18,8 @@ class RincianBabSeeder extends Seeder
 
         try {
             RincianBab::insert([
-                ['id' => 1, 'id_bab' => '1', 'video'  => 'BELAJAR INTEGRAL DARI DASAR DALAM 12 MENIT!.mp4', 'created_at' => now(), 'updated_at' => now()],
-                ['id' => 2, 'id_bab' => '2', 'video'  => 'BELAJAR KONSEP DIFERENSIAL (TURUNAN) DALAM 10 MENIT !.mp4', 'created_at' => now(), 'updated_at' => now()],
+                ['id' => 1, 'id_bab' => '1', 'video'  => 'E86ckq8yLUU?si=965zAiALpTEOJQW9', 'created_at' => now(), 'updated_at' => now()],
+                ['id' => 2, 'id_bab' => '2', 'video'  => 'UtTvAVOOD6U?si=nkta4ioWgbo8BMQz', 'created_at' => now(), 'updated_at' => now()],
             ]);
             DB::commit();
             $this->command->info("Rincian bab berhasil ditambahkan");

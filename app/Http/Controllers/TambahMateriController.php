@@ -34,7 +34,7 @@ class TambahMateriController extends Controller
         $request->validate([
             'nama' => 'required|string',
             'id_mapel' => 'required|exists:mapel,id',
-            'video' => 'required|file|mimes:mp4,video|max:50000', // Max file size 50MB
+            'link_video' => 'required|string',
         ]);
 
         $bab = new Bab();
@@ -42,18 +42,27 @@ class TambahMateriController extends Controller
         $bab->id_mapel = $request->id_mapel;
         $bab->save();
 
-        // Simpan video
-        if ($request->hasFile('video')) {
-            $file = $request->file('video');
-            $nama_file = time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('videos', $nama_file, 'video'); // Simpan file di dalam folder 'backend/assets/video'
-            
-            // Buat entri rincian bab
-            $rincianBab = new RincianBab();
-            $rincianBab->id_bab = $bab->id;
-            $rincianBab->video = $nama_file;
-            $rincianBab->save();
+        // Proses ambil ID video dari link YouTube
+        $url = $request->link_video;
+
+        // Cari posisi 'youtu.be/'
+        $startPos = strpos($url, 'youtu.be/') + strlen('youtu.be/');
+
+        // Ekstrak karakter setelah 'youtu.be/'
+        $videoId = substr($url, $startPos);
+
+        // Cari posisi '/' setelah video ID
+        $endPos = strpos($videoId, '/');
+        if ($endPos !== false) {
+            // Jika ditemukan '/', ambil hanya karakter sebelumnya
+            $videoId = substr($videoId, 0, $endPos);
         }
+
+        // Buat entri rincian bab
+        $rincianBab = new RincianBab();
+        $rincianBab->id_bab = $bab->id;
+        $rincianBab->video = $videoId;
+        $rincianBab->save();
 
         return redirect()->route('dashboard')->with('success', 'Bab berhasil ditambahkan.');
     }

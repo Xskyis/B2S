@@ -98,7 +98,7 @@
               </a>
             </div>
 
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <div class="navbar-nav-right d-flex align-items-center justify-content-between" id="navbar-collapse">
               <!-- Search -->
               <!-- <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
@@ -112,6 +112,14 @@
                 </div>
               </div> -->
               <!-- /Search -->
+
+             <!-- Page title -->
+              <div class="navbar-nav d-flex align-items-center">
+                <!-- value judul sesuai value dari child -->
+                <h5 class="mb-0">
+                  @yield('judul')
+                </h5>
+              </div>
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 @guest

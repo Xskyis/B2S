@@ -4,15 +4,16 @@
 @endphp
 
 @extends('welcome')
+@section('judul', 'List Requestan Materi')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="">
-                <h3 class="mb-4">List Requestan Materi</h4>
+               
             </div>
             @if ($requestMateris->isEmpty())
                 <div class="alert alert-warning" role="alert">
-                    Data Requestan Materi tidak ditemukan
+                    Belum ada requestan materi!
                 </div>
             @else
                 <div class="table-responsive">

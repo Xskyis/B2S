@@ -1,4 +1,5 @@
 @extends('welcome')
+@section('judul', 'Tambah Mapel')
 @section('content')
     <!-- Layout wrapper -->
     
@@ -7,7 +8,6 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
                 <div class="col-md-8">
-                  <h2>Tambah Mapel</h2>
                   <form action="{{ route('tambahMapel.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="form-group mb-2">

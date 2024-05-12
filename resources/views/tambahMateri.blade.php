@@ -1,4 +1,5 @@
 @extends('welcome')
+@section('judul', 'Tambah Materi')
 @section('content')
     <!-- Layout wrapper -->
     
@@ -7,7 +8,6 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
                 <div class="col-md-8">
-                  <h2>Tambah Materi</h2>
                   <form action="{{ route('tambahMateri.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="form-group mb-2">
@@ -23,8 +23,8 @@
                       </select>
                     </div>
                     <div class="form-group mb-2">
-                      <label class="mb-1" for="video">File Video:</label>
-                        <input type="file" class="form-control" id="video" name="video" required accept="video/mp4,video/*">
+                      <label class="mb-1" for="link_video">Link Video Youtube:</label>
+                        <input type="text" class="form-control" id="link_video" name="link_video" required>
                     </div>
                     <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
                   </form>

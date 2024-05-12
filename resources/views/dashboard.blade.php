@@ -1,4 +1,5 @@
 @extends('welcome')
+@section('judul', 'Dashboard')
 @section('content')
     <!-- Layout wrapper -->
     

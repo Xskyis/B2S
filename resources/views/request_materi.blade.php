@@ -1,9 +1,10 @@
 @extends('welcome')
+@section('judul', 'Request Materi')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="">
-                <h3 class="mb-4">Request Materi</h4>
+                
             </div>
             <div class="col-md-8">
                 <form action="{{ route('requestMateri.store') }}" method="POST" enctype="multipart/form-data">
