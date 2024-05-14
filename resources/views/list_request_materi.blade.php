@@ -12,8 +12,10 @@
                
             </div>
             @if ($requestMateris->isEmpty())
-                <div class="alert alert-warning" role="alert">
-                    Belum ada requestan materi!
+                <div class="container d-flex justify-content-center">
+                    <p class="alert alert-primary text-center w-75">
+                        Belum ada requestan materi !
+                    </p>
                 </div>
             @else
                 <div class="table-responsive">

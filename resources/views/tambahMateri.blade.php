@@ -17,9 +17,19 @@
                     <div class="form-group mb-2">
                       <label class="mb-1" for="id_mapel">Mapel:</label>
                       <select class="form-control" id="id_mapel" name="id_mapel" required>
+                        <option value="">Pilih mapel</option>
                         @foreach($mapels as $mapel)
                           <option value="{{ $mapel->id }}">{{ $mapel->nama }}</option>
                         @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group mb-2">
+                      <label class="mb-1" for="kelas">Kelas:</label>
+                      <select class="form-control" id="kelas" name="kelas" required>
+                          <option value="">Pilih kelas</option>
+                          <option value="7">Kelas 7</option>
+                          <option value="8">Kelas 8</option>
+                          <option value="9">Kelas 9</option>
                       </select>
                     </div>
                     <div class="form-group mb-2">

@@ -17,6 +17,7 @@ return new class extends Migration
                 ->constrained('mapel')
                 ->onDelete('restrict');
             $table->string('nama');
+            $table->string('kelas');
             $table->timestamps();
         });
     }

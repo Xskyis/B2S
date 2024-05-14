@@ -34,12 +34,14 @@ class TambahMateriController extends Controller
         $request->validate([
             'nama' => 'required|string',
             'id_mapel' => 'required|exists:mapel,id',
-            'link_video' => 'required|string',
+            'kelas' => 'required|string',
+            'link_video' => 'required|string'
         ]);
 
         $bab = new Bab();
         $bab->nama = $request->nama;
         $bab->id_mapel = $request->id_mapel;
+        $bab->kelas = $request->kelas;
         $bab->save();
 
         // Proses ambil ID video dari link YouTube
@@ -64,7 +66,7 @@ class TambahMateriController extends Controller
         $rincianBab->video = $videoId;
         $rincianBab->save();
 
-        return redirect()->route('dashboard')->with('success', 'Bab berhasil ditambahkan.');
+        return redirect()->route('dashboard')->with('success', 'Materi berhasil ditambahkan, silahkan cek mapel terkait.');
     }
 
     /**
