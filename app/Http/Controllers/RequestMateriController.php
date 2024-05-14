@@ -31,12 +31,14 @@ class RequestMateriController extends Controller
     {
         $request->validate([
             'nama' => 'required|string',
+            'kelas' => 'required|string',
             'mapel' => 'required|string',
-            'req_materi' => 'required|string',
+            'req_materi' => 'required|string'
         ]);
 
         $requestMateri = new RequestMateri();
         $requestMateri->nama = $request->nama;
+        $requestMateri->kelas = $request->kelas;
         $requestMateri->mapel = $request->mapel;
         $requestMateri->req_materi = $request->req_materi;
         $requestMateri->save();

@@ -14,6 +14,15 @@
                         <input type="text" class="form-control" id="nama" name="nama" required>
                     </div>
                     <div class="form-group mb-2">
+                        <label class="mb-1" for="kelas">Kelas:</label>
+                        <select class="form-control" name="kelas" id="kelas">
+                            <option value="">Pilih kelas</option>
+                            <option value="7">Kelas 7</option>
+                            <option value="8">Kelas 8</option>
+                            <option value="9">Kelas 9</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
                         <label class="mb-1" for="mapel">Mapel:</label>
                         <select class="form-control" name="mapel" id="mapel" required>
                             <option value="">Pilih Mapel</option>

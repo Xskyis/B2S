@@ -9,5 +9,5 @@ class RequestMateri extends Model
 {
     use HasFactory;
     protected $table = 'request_materi';
-    protected $fillable = ['nama', 'mapel', 'req_materi'];
+    protected $fillable = ['nama', 'mapel', 'kelas', 'req_materi'];
 }
